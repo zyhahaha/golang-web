@@ -5,6 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// post请求参数获取
 func main() {
 	router := gin.Default()
 

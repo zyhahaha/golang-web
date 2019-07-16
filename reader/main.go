@@ -5,7 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// return img
+// 返回文件
 func main() {
 	router := gin.Default()
 	router.GET("/someDataFromReader", func(c *gin.Context) {
