@@ -19,9 +19,9 @@ func main() {
 		fmt.Print(err.Error())
 	}
 	type Person struct {
-		Id         int
-		First_Name string
-		Last_Name  string
+		Id         int    `json:"id"`
+		First_Name string `json:"first_name"`
+		Last_Name  string `json:"last_name"`
 	}
 	router := gin.Default()
 	// GET a person detail
@@ -94,9 +94,9 @@ func main() {
 		})
 	})
 	// PUT - update a person details
-	router.PUT("/person", func(c *gin.Context) {
+	router.PUT("/person/:id", func(c *gin.Context) {
 		var buffer bytes.Buffer
-		id := c.Query("id")
+		id := c.Param("id")
 		first_name := c.PostForm("first_name")
 		last_name := c.PostForm("last_name")
 		stmt, err := db.Prepare("update person set first_name= ?, last_name= ? where id= ?;")
