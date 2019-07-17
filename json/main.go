@@ -5,6 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// 返回JSON和XML
 func main() {
 	r := gin.Default()
 	// gin.H is a shortcut for map[string]interface{}
